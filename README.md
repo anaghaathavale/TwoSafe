@@ -30,12 +30,17 @@ For asymmetric property:
 For symmetric property:
 <BINARY> [NETWORK] - [SPEC_FILE] [--robustness-delta-symmetric DELTA] --robustness-delta-symmetric-N2 DELTA] [--input-epsilon EPS] [--timeout TIMEOUT]
 
-
 NETWORK: NN file (onnx)
 SPEC_FILE: Specification file (vnnlib)
-
-Note that the hyphen (-) between [NETWORK] and [SPEC_FILE] is required
 ```
+### Absolute confidence gap
+To specify the confidence as an absolute gap between the largest and second-largest output (instead of a probability), use --robustness-abs-delta:
+
+```
+julia --project cli.jl model_flat.onnx - test/examples/specs/mnist_global.vnnlib --robustness-abs-delta 13.815509558 --input-epsilon 0.1
+```
+Note that the hyphen (-) between [NETWORK] and [SPEC_FILE] is required
+
 The benchmarks and specification files are under /experiments
 
 ## License
