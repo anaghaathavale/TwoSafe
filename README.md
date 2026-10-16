@@ -37,7 +37,7 @@ SPEC_FILE: Specification file (vnnlib)
 To specify the confidence as an absolute gap between the largest and second-largest output (instead of a probability), use --robustness-abs-delta:
 
 ```
-julia --project cli.jl model_flat.onnx - test/examples/specs/mnist_global.vnnlib --robustness-abs-delta 13.815509558 --input-epsilon 0.1
+<BINARY> [NETWORK] - [SPEC_FILE] [--robustness-abs-delta GAP] [--input-epsilon EPS] [--timeout TIMEOUT]
 ```
 Note that the hyphen (-) between [NETWORK] and [SPEC_FILE] is required
 
